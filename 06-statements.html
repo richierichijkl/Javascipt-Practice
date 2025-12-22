@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Boolean and If else</title>
+    </head>
+
+    <body>
+
+        <script>
+            // use of == ; even if lhs and rhs have diff types 
+            console.log(5=='5.0'); //returns true
+
+            //if-else statements
+            let k=4;
+            if(k<50){
+                console.log('less than 50');
+            }else if(k>50){
+                console.log('greater than 50');
+            }else{
+                console.log('equal to 50');
+            }
+
+            let curr=5;
+            if(curr==6){
+                console.log(6);
+            }else{
+                console.log(curr);
+            }
+
+
+
+            //Truthy and falsy values
+            if(5){
+                console.log(true);
+            }
+            //falsy-0,false,null,'',NaN,undefined
+            if(2){
+                console.log(undefined);
+            }
+
+            //NaN - not a number (type coersion if '5'/2 & 'k'/2 NaN)
+            let res='5'/2;
+            console.log(res);
+
+            //undefined
+            let variable;
+            console.log(variable);
+
+            //ternary operator
+            let m=5;
+            m>=5? console.log(true):console.log(false);
+        </script>
+
+    </body>
+</html>
