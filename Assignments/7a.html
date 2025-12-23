@@ -8,18 +8,7 @@
         <p>Rock Paper Scissors</p>
 
         <button onClick="
-        randomeNumber = Math.random();
-
-
-        if(randomeNumber>=0 && randomeNumber<1/3){
-            computerResult='Rock';
-        }else if(randomeNumber>=1/3 && randomeNumber<2/3){
-            computerResult='Paper';
-        }else{
-            computerResult='Scissors';
-        }
-
-        
+        computeMove();
 
         if(computerResult==='Rock'){
             final='Tie';
@@ -42,15 +31,7 @@
 
         <button onClick="
         
-        randomeNumber = Math.random();
-        if(randomeNumber>=0 && randomeNumber<1/3){
-            computerResult='Rock';
-        }else if(randomeNumber>=1/3 && randomeNumber<2/3){
-            computerResult='Paper';
-        }else{
-            computerResult='Scissors';
-        }
-
+        computeMove();
 
         if(computerResult==='Rock'){
             final='Won';
@@ -72,17 +53,7 @@
         </button>
 
         <button onClick="
-        randomeNumber = Math.random();
-
-        if(randomeNumber>=0 && randomeNumber<1/3){
-            computerResult='Rock';
-        }else if(randomeNumber>=1/3 && randomeNumber<2/3){
-            computerResult='Paper';
-        }else{
-            computerResult='Scissors';
-        }
-
-        
+        computeMove();        
 
         if(computerResult==='Rock'){
             final='loss';
@@ -104,9 +75,22 @@
         </button>
 
         <script>
-            let randomeNumber=Math.random();
+            
             let computerResult='';
             let final='';
+
+            function computeMove(){
+                let randomeNumber=Math.random();
+
+
+                if(randomeNumber>=0 && randomeNumber<1/3){
+                    computerResult='Rock';
+                }else if(randomeNumber>=1/3 && randomeNumber<2/3){
+                    computerResult='Paper';
+                }else{
+                    computerResult='Scissors';
+                }
+            }
 
             
         </script>

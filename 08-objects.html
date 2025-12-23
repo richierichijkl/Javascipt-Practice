@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Objects</title>
+    </head>
+
+    <body>
+
+        <script>
+          //Objects:group of multiple values
+          const product={name:'socks',price:1090};
+          console.log(product);
+          console.log(product.price);
+          product.name='cotton socks';
+          console.log(product);
+
+          //add new property
+          product.newProperty='sold';
+          console.log(product);
+
+          //delete property
+          delete product.newProperty;
+          console.log(product);
+
+          //Notations dot and bracket
+          const student={name:'Richa',age:21,["class-name"]:12,'height':6}; //can leavse out brackets
+          console.log(student.name);
+          console.log(student[`name`]);
+          //dot notation cant work with properties like class-name as it assumes that the dash is minus hence bracket notation used
+          console.log(student);
+
+          //we can add any kind of values to object -int , str,boolean
+
+          student['favourite-number']={'a':1,'b':2};
+          console.log(student);
+          console.log(student['favourite-number'].a);
+
+          //we can also add a function  
+          student.func=function f1(){
+            console.log("Inside function");
+          }
+
+          student.func();
+
+          //console if obj and log() is a function ; obj + function = method
+          console.log(typeof console);
+          console.log(typeof console.log);
+
+          //lets talk about some build in methods 
+          /*1) json:similar to js object but doesnt support functions and all the properties must be stored inside quotes
+          2) local storage*/
+
+
+          //Js object is converted to JSON:-JSON.stringify(js_obj);
+          console.log(typeof JSON.stringify(product));
+          console.log(typeof JSON.stringify(student));
+          
+          console.log(product);
+
+          //converting json back to js
+          const json_obj=JSON.stringify(student);
+          console.log(JSON.parse(json_obj));
+
+
+          //localStorage.setItem("key",string value),getItem("key"),remove("key");
+
+
+          //autoboxing
+          console.log('123'.length);
+          console.log('abc'.toUpperCase());
+
+          //reference
+          const obj1={name:"abc"};
+          const obj2=obj1;
+          console.log(obj1);
+          console.log(obj1);
+          obj1.name="123";
+          console.log(obj1);
+          console.log(obj1); 
+          console.log(obj1===obj2);
+          const obj3={name:"123"};
+          console.log(obj1===obj3);
+
+
+          //destructuring
+          const obj4={name:"richa",age:20};
+          const {name,age}=obj4;
+          console.log(name,age);
+
+          //shorthand property
+          const obj5={
+            //message:name
+            name};
+          console.log(obj5);
+          console.log(obj5.message===obj4.name);
+
+        </script>
+    </body>
+</html> 
