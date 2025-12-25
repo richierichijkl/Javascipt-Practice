@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Dom Projects</title>
+    </head>
+
+    <body>
+
+        <p>YouTube Subscribe Button</p>
+        <button onClick="subscribe()" class="js-subscribe-button">Subscribe</button>
+
+        <br>
+        <br>
+
+        <p>Rock Paper Scissors</p>
+        <a href="https://supersimple.dev/projects/dom-rock-paper-scissors/">Click Here</a>
+
+        <br>
+        <br>
+
+        <p>Amazon Shipping Calculator</p>
+        <p>Orders under $40 = +$10 shipping.</p>
+        <p>Orders over $40 = FREE shipping.</p>
+        <input placeholder="cost of order" class="js-input-field" onkeydown="onEnterHandler(event)">
+        <button onClick="calculate()">Calculate</button>
+        <p class="js-output-field"></p>
+        <br>
+        <br>
+        <br>
+        <a href="https://supersimple.dev/projects/dom-with-css/">CSS version of these projects</a>
+
+
+
+
+        <script>
+
+            let str=String(20);
+            console.log(typeof str);
+            console.log(typeof Number(str));
+            console.log('25'-5); //not preferred
+            console.log('25'+3); //243
+
+            /* window object is behind console.log,alert everything we just dont type it
+            window.console.log('k');
+            window.alert('stoppp');
+            */
+
+
+            function onEnterHandler(event){
+                if(event.key==='Enter'){
+                    calculate();
+                }
+            }
+            //subcribe
+            function subscribe(){
+                const element=document.querySelector('.js-subscribe-button');
+                //console.log(element.innerHTML);
+                //innerText gives subscribe without any leading and trailing spaces
+
+                if(element.innerHTML==='Subscribe'){
+                    element.innerHTML='Subscribed';
+                }else{
+                    element.innerHTML='Subscribe'
+                }
+            }
+
+            function calculate(){
+                const element=document.querySelector('.js-input-field');
+                let cost=Number(element.value);
+                //for input element we use .value attributes
+                if(cost<40){
+                    cost=cost+10;
+                    
+                }
+
+                document.querySelector('.js-output-field').innerHTML=`$${cost}`;
+            }
+
+            
+
+        </script>
+    </body>
+</html>
