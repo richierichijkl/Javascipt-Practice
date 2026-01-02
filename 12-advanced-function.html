@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Adavnced Functions</title>
+    </head>
+    <body>
+
+        <script>
+            /* 
+
+            //hoisting
+            console.log(add(100,200));
+
+            //reuse code using function
+            function greeting(){
+                console.log('hello');
+            }
+            //calling
+            greeting();
+
+            //functions are value , you can store the values returned by function
+
+            function add(a,b){
+                return a+b;
+            }
+
+            let sum=add(2,5);
+            console.log(sum);
+
+            //storing functions in variables
+            let result=function greet(){
+                console.log('Heyy');
+            }
+           //function name not needed:anonymous function
+            let result=function(){
+                console.log('Heyy');
+            }
+            console.log(result);
+            result(); //runs the function
+            
+            //advantage of normal functions like 
+            //let result=function greet(){
+                console.log('Heyy');
+            }
+           //enables hoisting-call function before its defined
+
+           //we can put functions in objects
+           let object1={
+            name:'Richa',
+            func:function(){
+                console.log('inside object1');
+            }
+           }
+
+           object1.func();
+
+           //call function inside function
+           function run(param){
+            param();
+           }
+           run(function(){
+            console.log('function inside function');
+           })
+
+
+           //setTimeout(func,time) function
+           setTimeout(function(){
+            console.log('timeout')
+           },3000);
+           //Asynchronous code
+           console.log('setTime sets a time for t ms then doesnt wait rather moves to next line execute it');
+
+           //synchronous code waits for one line to finish executing then moves to next line
+
+           //setInterval(func,t)
+           setInterval(function(){
+            console.log('setInterval running');
+           },3000);
+           console.log('setInterval is also async function');
+           */
+
+           //Another way to loop through an array:forEach
+
+           const arr=['a','b','c','d'];
+           arr.forEach(function(val,ind){
+            console.log(val+':'+ind);
+           });
+
+           //shorter way of writing functions : arrow function
+           const arrowFuntion=()=>{
+            console.log('inside arrow function');
+           };
+           arrowFuntion();
+
+           //if arrow function just has 1 parameter then () is optional;but for multiple params you will need it ;we can use them inside objects
+
+           const arrowFuntion2=param=>{
+            console.log(param);
+           }
+           arrowFuntion2(2);
+
+           const oneLineFunction=()=>2+3;
+           console.log(oneLineFunction());
+
+
+
+
+        </script>
+
+    </body>
+</html>
