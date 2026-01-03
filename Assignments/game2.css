@@ -16,9 +16,18 @@ body{
     border:3px solid white;
     margin-left: 10px;
     border-radius: 50px;
+    cursor: pointer
 }
 
 .rock-img,.paper-img , .scissors-img{
     height: 50px;
     width: 50px;
+}
+
+.autoplay-button,.reset-button{
+    background-color: white;
+    border: none;
+    font-size: 15px;
+    padding: 8px 15px;
+    cursor: pointer;
 }
