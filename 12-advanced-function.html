@@ -6,6 +6,8 @@
     </head>
     <body>
 
+        <button class="js-eventListenerTest">click me</button>
+
         <script>
             /* 
 
@@ -102,6 +104,46 @@
 
            const oneLineFunction=()=>2+3;
            console.log(oneLineFunction());
+
+           //addEventListener-we can add multiple event listeners for same element
+           //we have events like 'click' etc that we'll find
+           //use eventListeners over onClick() : when we add second function on same click then the first is removed but this is not the problem with eventListeners hence we can add multiple functions with them; 
+           const eventListener=()=>console.log('cliked');
+           const element=document.querySelector('.js-eventListenerTest');
+           element.addEventListener('click',eventListener);
+           element.removeEventListener('click',eventListener);
+           element.addEventListener('click',()=>console.log('clicked2'));
+
+           //event='keydown'
+           element.addEventListener('keydown',(event)=>{
+            if(event.key==='r'){
+                console.log('rock');
+            }else if(event.key==='p'){
+                console.log('paper');
+            }else if(event.key==='Enter'){
+                console.log('enter');
+            }
+           });
+
+           //some more array functions
+           //.filter()->method inside it returns true or false ; filtering happens based on true or false
+           const arr2=[1,2,-2,4,1];
+           const ans=arr2.filter((value,index)=>{
+            /*if(value>=0) return true;
+            else return false;*/
+            return value>=0;
+           });
+           console.log(ans);
+
+           //.map()->method inside converts an array to another based on the return value
+           const ans2=arr2.map((value,index)=>{
+            //return 10;->makes everything 10
+            //return value*2 ->doubles each element
+            return value+10;
+           });
+           console.log(ans2);
+
+
 
 
 
