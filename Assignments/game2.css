@@ -31,3 +31,8 @@ body{
     padding: 8px 15px;
     cursor: pointer;
 }
+
+.winIcon img{
+    height: 50px;
+    width: 50px;
+}
