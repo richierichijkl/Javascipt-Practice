@@ -6,6 +6,32 @@ let score = JSON.parse(localStorage.getItem('score')) || {
   ties: 0
 };
 
+let isAutoPlaying=false;
+autoPlayId=null;
+
+function autoPlay() {
+  if (!isAutoPlaying) {
+    autoPlayId = setInterval(() => {
+      const rand = Math.random();
+      let move;
+
+      if (rand <= 1 / 3) move = "rock";
+      else if (rand <= 2 / 3) move = "paper";
+      else move = "scissors";
+
+      movements(move);
+    }, 500);
+
+    isAutoPlaying = true;
+  } else {
+    clearInterval(autoPlayId);
+    autoPlayId = null;
+    isAutoPlaying = false;
+  }
+}
+
+
+
 
 
 function movements(move){
